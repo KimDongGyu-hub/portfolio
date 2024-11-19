@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  word-break: keep-all;
+}
+
+/* header */
+.headerBox {
+  height: 80px;
+  display: flex;
+  border-right: 1px solid black;
+  align-items: center;
+  justify-content: center;
+}
+
+.headerText {
+  padding-right: 5%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.headerText:hover {
+  color: #425a73;
+}
