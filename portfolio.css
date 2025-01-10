@@ -6,21 +6,390 @@
   word-break: keep-all;
 }
 
+/* a태그 기본 설정 제거*/
+
+a {
+  text-decoration: none;  /* 기본 밑줄 제거 */
+  color: inherit;         /* 링크 색상을 부모 요소의 색상으로 설정 */
+}
+
+
+
+body{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+h2{
+  padding-bottom: 5px;
+}
+
+.titleColor{
+  color: #425a73;
+  font-size: 50px;
+}
+/* 섹션 나누기 */
+
+
+.homeBox {
+  background-color: rgb(113, 113, 243);
+  border-radius: 2rem;
+  color: white;
+  padding: 70px;
+  box-shadow: 0px 6px 20px rgba(66, 95, 225, 0.2);
+}
+
+.homeText{
+  font-size: 48px;
+  padding-bottom: 40px;
+}
+
+.aboutBox, .contactBox, .contactlast{
+  margin-top: 100px;
+  background-color: white(113, 113, 243);
+  border-radius: 2rem;
+  color: black;
+  padding: 70px;
+  box-shadow: 0px 6px 20px rgba(66, 95, 225, 0.2);
+}
+
+.skillBox{
+  margin-top: 100px;
+  background-color: white(113, 113, 243);
+  border-radius: 2rem;
+  color: black;
+  padding: 70px 70px 90px 70px;
+  box-shadow: 0px 6px 20px rgba(66, 95, 225, 0.2);
+}
+
+.contactlast{
+  margin-bottom: 100px;
+}
+
+
 /* header */
 .headerBox {
-  height: 80px;
+  position: fixed; /* 고정된 위치 */
+  top: 0; /* 화면의 맨 위 */
+  left: 0; /* 화면의 맨 왼쪽 */
+  width: 100%; /* 화면 전체 너비 */
+  height: 80px; /* 기존 높이 */
   display: flex;
-  border-right: 1px solid black;
   align-items: center;
   justify-content: center;
+  background-color: white; /* 배경 색상을 추가하면 스크롤 시 잘 보입니다 */
+  z-index: 10; /* 다른 요소보다 위에 표시되도록 설정 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과로 구분 */
+}
+
+body {
+  padding-top: 120px; /* header 높이만큼 아래로 밀어서 콘텐츠가 겹치지 않도록 함 */
 }
 
 .headerText {
   padding-right: 5%;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .headerText:hover {
   color: #425a73;
+}
+
+/* home */
+
+.notion {
+  display: inline-block;  /* a 태그를 블록처럼 동작하게 만듦 */
+  margin-top: 50px;  /* 위쪽 여백 */
+  background-color: white;
+  padding: 10px;
+  text-decoration: none;  /* 기본 밑줄 제거 */
+  color: black;  /* 텍스트 색상 */
+  font-weight: bold;  /* 글씨 굵게 */
+  border-radius: 10px;  /* 모서리 둥글게 */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+.notion:hover {
+  background-color: #425a73; /* 마우스를 올렸을 때 배경 색상 */
+  color: white;  /* 텍스트 색상 변경 */
+  text-decoration: underline;  /* 밑줄 표시 */
+}
+
+/* aboutme */
+.aboutFlex{
+  display: flex;
+}
+
+.aboutFlex > div:nth-child(2) {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.aboutMeImg{
+  width: 200px;        /* 고정된 너비 */
+  height: 400px;       /* 고정된 높이 */
+  overflow: hidden; 
+  margin-right: 100px;   /* 이미지가 박스를 넘지 않도록 숨김 처리 */
+}
+
+.aboutMeImg img{
+  width: 100%;         /* 이미지 너비를 부모 박스의 너비에 맞게 100%로 설정 */
+  height: 100%;        /* 이미지 높이를 부모 박스의 높이에 맞게 100%로 설정 */
+  object-fit: contain; /* 이미지 비율을 유지하면서 부모 박스에 맞게 크기를 조정 */
+}
+
+
+
+
+.aboutMe{
+  display: flex;
+  justify-content: center; /* 화면의 수평 중앙 정렬 */
+  align-items: center; /* 화면의 세로 중앙 정렬 */
+}
+
+/* skill */
+
+.skillBox{
+  text-align: center;
+  padding-top: 100px;
+}
+
+#skillPadding{
+  padding-top: 100px;
+}
+
+.skill, .tool {
+  display: flex;           /* Flexbox를 사용하여 이미지들을 가로로 정렬 */
+  justify-content: space-evenly; /* 이미지들 간격을 고르게 배분 */
+  align-items: center;     /* 세로 중앙 정렬 */
+  padding: 0;              /* 기본 padding 제거 */
+  margin: 0;               /* 기본 margin 제거 */
+}
+
+.skill img, .tool img {
+  max-width: 100%;         /* 이미지가 부모 요소를 넘지 않도록 설정 */
+  height: auto;            /* 비율에 맞게 자동으로 높이 조정 */
+}
+
+/* portfolio */
+
+.container{padding-top: 20px;}
+
+.menu{
+display: flex;
+font-size: 35px;
+justify-content: space-evenly;
+padding-bottom: 100px;
+}
+
+.projectHidden{
+  display: flex;
+  justify-content: space-between; /* 양쪽 끝으로 배치 */
+  align-items: center;         /* 세로 중앙 정렬 */
+}
+
+.contactImg{
+ border: 1px solid black;
+ padding: 480px 384px 0 0;
+ 
+}
+
+
+
+.viewFlex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.viewImg {
+  width: 520px;        /* 고정된 너비 */
+  height: 400px;       /* 고정된 높이 */
+  overflow: hidden;    /* 이미지가 박스를 넘지 않도록 숨김 처리 */
+}
+
+.viewImg img {
+  width: 100%;         /* 이미지 너비를 부모 박스의 너비에 맞게 100%로 설정 */
+  height: 100%;        /* 이미지 높이를 부모 박스의 높이에 맞게 100%로 설정 */
+  object-fit: contain; /* 이미지 비율을 유지하면서 부모 박스에 맞게 크기를 조정 */
+}
+.viewTextPaddig{
+  padding-bottom: 20px;
+}
+
+.tollPadding{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.projectHidden {
+  display: none;
+}
+
+
+.projectHidden.active {
+  display: block;
+}
+
+
+.menuItem {
+  cursor: pointer;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+
+}
+
+.menuItem.active {
+  font-weight: bold;
+  color: white;
+  background-color: #425a73;
+  border-radius: 10px;
+}
+
+.site {
+  color: white; /* 링크 색상 */
+  text-decoration: none; /* 기본 링크 밑줄 제거 */
+  font-weight: bold; /* 글씨를 굵게 */
+  font-size: 20px;
+  background-color:#425a73 ;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.site:hover {
+  color: #425a73; /* 마우스를 올렸을 때 색상 변경 */
+  background-color: white;
+  text-decoration: underline; /* 마우스를 올렸을 때 밑줄 표시 */
+}
+
+.git {
+  color: white; /* 링크 색상 */
+  text-decoration: none; /* 기본 링크 밑줄 제거 */
+  font-weight: bold; /* 글씨를 굵게 */
+  font-size: 20px;
+  background-color: #425a73;
+  padding: 10px 20px; /* 수평 패딩을 추가하여 크기를 확장 */
+  border-radius: 10px;
+  display: inline-block; /* 인라인 블록 요소로 설정하여 크기를 설정할 수 있게 함 */
+  box-sizing: border-box; /* padding과 border가 크기 계산에 포함되지 않도록 함 */
+}
+
+.git:hover {
+  color: #425a73; /* 마우스를 올렸을 때 색상 변경 */
+  background-color: white;
+  text-decoration: underline; /* 마우스를 올렸을 때 밑줄 표시 */
+}
+
+/* 링크 부모 요소의 스타일 (링크가 덮어쓰지 않도록) */
+.link {
+  margin-top: 20px; /* 위쪽에 여백 추가 */
+}
+
+/* 반응형 */
+/* 태블릿 버전 (1024px 이하) */
+@media screen and (max-width: 1024px) {
+  /* 전체 여백 조정 */
+  body {
+    padding: 120px 20px 0 20px;
+  }
+
+  /* 제목 크기 조정 */
+  .titleColor {
+    font-size: 40px;
+  }
+
+  /* About 섹션 이미지와 텍스트 세로 배치 */
+  .aboutFlex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutMeImg {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+
+  /* Portfolio 섹션 이미지와 텍스트 세로 배치 */
+  .viewFlex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .viewText {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .menuItem{
+    font-size: 24px;
+  }
+
+  h2{font-size: 20px;}
+
+  .headerText{
+    font-size: 20px;
+  }
+}
+
+/* 모바일 버전 (430px 이하) */
+@media screen and (max-width: 430px) {
+  /* 전체 여백 더 줄임 */
+  body {
+    padding: 100px 10px 0 10px;
+  }
+
+  /* 제목 크기 더 줄임 */
+  .titleColor {
+    font-size: 30px;
+  }
+
+  /* 헤더 텍스트 크기 조정 */
+  .headerText {
+    font-size: 16px;
+    padding-right: 3%;
+  }
+
+  /* 홈 섹션 텍스트 크기 조정 */
+  .homeText {
+    font-size: 32px;
+  }
+
+  /* About 섹션 이미지 크기 조정 */
+  .aboutMeImg {
+    width: 150px;
+    height: 300px;
+  }
+
+  /* Portfolio 메뉴 크기 조정 */
+  .menu {
+    font-size: 24px;
+  }
+
+  /* Portfolio 이미지 크기 조정 */
+  .viewImg {
+    width: 100%;
+    height: 300px;
+  }
+
+  /* 각 섹션의 패딩 줄임 */
+  .homeBox,
+  .aboutBox,
+  .skillBox,
+  .contactBox,
+  .contactlast {
+    padding: 40px;
+  }
+
+  .menuItem{
+    font-size: 20px;}
+    
+  h2{
+    font-size: 18px;
+  }
+
+  .headerText{
+    font-size: 16px;
+  }
 }
